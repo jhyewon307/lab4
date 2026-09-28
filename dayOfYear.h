@@ -25,6 +25,13 @@ namespace JungHyewon2693292
             }
         }
     public:
+        dayOfYear(int m=1, int d=1)
+        : month{m}, day{d}
+        {
+            testMonth();
+            testDay();
+        }
+        
         void input()
         {
             std::cout<<"Enter the month as a number:";
@@ -33,11 +40,10 @@ namespace JungHyewon2693292
             std::cin>>day; testDay();
         }
        
-        int getMonth(){return month;}
-        int getDay(){return day;}
+       
         void setMonth(int newMonth){month=newMonth; testMonth();}
         void setDay(int newDay){day=newDay; testDay();}
-        void print()
+        void print() const
         {
             switch(month)
             {
@@ -54,8 +60,10 @@ namespace JungHyewon2693292
                 case 11:std::cout <<"Nov. ";break;
                 case 12:std::cout <<"Dec. ";break;
             } std::cout << day << "\n";
+
         }
-      
+        int getMonth() const{return month;}
+        int getDay() const{return day;}
     
     };
 }
